@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DevHelper">
+
+  <Color x:Key="LabelOnLightBGFontColor">#FF8C8C8C</Color>
+  
+  <Style x:Name="LabelStyle" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="#666666"></Setter>  
+    <Setter Property="TextAlignment" Value="Right"></Setter>
+  </Style>
+
+</ResourceDictionary>
