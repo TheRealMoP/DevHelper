@@ -110,6 +110,9 @@
     <Compile Include="Views\GuidGenerator.xaml.cs">
       <DependentUpon>GuidGenerator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -123,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\ButtonIcons\Wiedergabe eingekreist-48_#666666.png" />
+    <Content Include="Assets\MenuIcons\Home-48_#666666.png" />
     <Content Include="Assets\MenuIcons\Strichcode-48.png" />
     <Content Include="Assets\MenuIcons\Währungsumtausch-48.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
@@ -164,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\GuidGenerator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

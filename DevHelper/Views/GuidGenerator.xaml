@@ -9,18 +9,12 @@
     mc:Ignorable="d">
 
   <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <StackPanel Orientation="Vertical" Padding="20" Background="AliceBlue">
-      <StackPanel Orientation="Horizontal" Background="#dbf4fd" Height="48">
-        <Button Tapped="GenerateGuidsTapped" Height="48" Width="48"
-                Background="#5500BFFF" Padding="0" 
+    <StackPanel Orientation="Vertical" Padding="0" Background="AliceBlue">
+      <StackPanel Orientation="Horizontal" Background="#dbf4fd" Height="60">
+        <Button Tapped="GenerateGuidsTapped" Height="60" Width="60"
+                Background="#5500BFFF" Padding="0" Margin="20,0,0,0"
                 FontFamily="Segoe MDL2 Assets" FontSize="36" Foreground="#666666" Content="&#xEDB5;">
         </Button>
-        <!--<Button Tapped="GenerateGuidsTapped" Height="48" Width="48"
-                  Background="DeepSkyBlue" Padding="0">
-          <StackPanel Orientation="Horizontal">
-            <Image Source="../Assets/ButtonIcons/Wiedergabe eingekreist-48_#666666.png"></Image>
-          </StackPanel>
-        </Button>-->
         <TextBlock Text="Anzahl" VerticalAlignment="Center" Margin="20,0,0,0" Style="{StaticResource LabelStyle}"></TextBlock>
         <TextBox x:Name="TextBoxGuidsCount" Text="1" Margin="6,0,0,0" BorderBrush="#AAAAAA" BorderThickness="1" VerticalAlignment="Center" Width="53"></TextBox>
         <TextBlock Text="Prefix" VerticalAlignment="Center" Margin="20,0,0,0"></TextBlock>
@@ -40,9 +34,10 @@
         </ComboBox>
       </StackPanel>
       <StackPanel Orientation="Horizontal" Height="48">
-        <CheckBox x:Name="CheckBoxCopyAuto" IsThreeState="False" IsChecked="True" Content="Copy automatically"></CheckBox>
+        <CheckBox x:Name="CheckBoxCopyAuto" IsThreeState="False" IsChecked="True" Content="Copy automatically" Margin="20,0,0,0"></CheckBox>
       </StackPanel>
-      <TextBox x:Name="TextBoxGeneratedGuids" Height="400" Width="635" TextWrapping="Wrap" HorizontalAlignment="Left"></TextBox>
+      <RichEditBox x:Name="TextBoxGeneratedGuids" Height="400" Width="635" HorizontalAlignment="Left" Margin="20,0,0,0"></RichEditBox>
+        <!--<TextBox x:Name="TextBoxGeneratedGuids" Height="400" Width="635" TextWrapping="Wrap" HorizontalAlignment="Left"></TextBox>-->
     </StackPanel>
   </Grid>
 </Page>

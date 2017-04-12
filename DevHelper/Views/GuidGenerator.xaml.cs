@@ -6,6 +6,9 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
+using Windows.UI.Core;
+using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,24 +33,50 @@ namespace DevHelper.Views
     {
       SetTemplateItemSource();
       this.InitializeComponent();
+      
+    }
+
+    protected override void OnNavigatedTo(NavigationEventArgs e)
+    {
+      CoreWindow.GetForCurrentThread().KeyDown += MainPare_KeyDown;
+    }
+
+    protected override void OnNavigatedFrom(NavigationEventArgs e)
+    {
+      CoreWindow.GetForCurrentThread().KeyDown -= MainPare_KeyDown;
+    }
+
+    private void MainPare_KeyDown(CoreWindow sender, KeyEventArgs args)
+    {
+      if (args.VirtualKey == VirtualKey.Enter)
+      {
+        GenerateGuids();
+      }
     }
 
     private void SetTemplateItemSource()
     {
-      TemplateItemSource = new List<GuidGeneratorTemplate>();
-
-      TemplateItemSource.Add(null);
-
-      TemplateItemSource.Add(new GuidGeneratorTemplate()
+      TemplateItemSource = new List<GuidGeneratorTemplate>
       {
-        Name = "C# - Guid.Parse()",
-        Prefix = "Guid.Parse(\"",
-        Suffix = "\")",
-        Separator = ","
-      });
+        null,
+        new GuidGeneratorTemplate()
+        {
+          Name = "C# - Guid.Parse()",
+          Prefix = "Guid.Parse(\"",
+          Suffix = "\")",
+          Separator = ","
+        }
+      };
+
+
     }
 
     private void GenerateGuidsTapped(object sender, TappedRoutedEventArgs e)
+    {
+      GenerateGuids();
+    }
+
+    private void GenerateGuids()
     {
       var guids = "";
       var prefix = TextBoxPrefix.Text;
@@ -67,7 +96,8 @@ namespace DevHelper.Views
         }
       }
 
-      TextBoxGeneratedGuids.Text = guids;
+      //TextBoxGeneratedGuids.Text = guids;
+      TextBoxGeneratedGuids.Document.SetText(TextSetOptions.None, guids);
       if (CheckBoxCopyAuto.IsChecked.GetValueOrDefault(false))
       {
         var dataPackage = new DataPackage();

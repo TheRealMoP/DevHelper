@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using DevHelper.Views;
 
 namespace DevHelper
 {
@@ -28,6 +29,7 @@ namespace DevHelper
     {
       this.InitializeComponent();
       PageVM = new NavMenuVM();
+      (MainMenu.Content as Frame)?.Navigate(typeof(HomePage));
     }
 
     private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -39,7 +41,7 @@ namespace DevHelper
     {
       ListBox list = (ListBox)sender;
       if (list.SelectedIndex == -1) { return; }
-      (MainMenu.Content as Frame).Navigate(((NavMenuListItem)list.SelectedItem).Page);
+      (MainMenu.Content as Frame)?.Navigate(((NavMenuListItem)list.SelectedItem)?.Page);
       MainMenu.IsPaneOpen = false;
     }
   }

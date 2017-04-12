@@ -11,6 +11,7 @@ namespace DevHelper.ViewModels
 
     public NavMenuVM()
     {
+      NavMenuItems.Add(new NavMenuListItem("../Assets/MenuIcons/Home-48_#666666.png", "Home", typeof(HomePage)));
       NavMenuItems.Add(new NavMenuListItem("../Assets/MenuIcons/Strichcode-48.png", "GUID Generator", typeof(GuidGenerator)));
       NavMenuItems.Add(new NavMenuListItem("../Assets/MenuIcons/Währungsumtausch-48.png", "GUID Converter", typeof(GuidConverter)));
     }

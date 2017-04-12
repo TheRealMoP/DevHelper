@@ -38,7 +38,8 @@
       </StackPanel>
     </SplitView.Pane>
     <SplitView.Content>
-      <Frame></Frame>
+      <Frame>
+      </Frame>
     </SplitView.Content>
   </SplitView>
 </Page>

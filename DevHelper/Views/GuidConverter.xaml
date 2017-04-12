@@ -8,29 +8,22 @@
     mc:Ignorable="d">
 
   <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <StackPanel Orientation="Vertical" Padding="20" Background="AliceBlue">
-      <StackPanel Orientation="Horizontal" Background="#dbf4fd" Height="48">
-        <Button Tapped="ButtonConvertTapped" Height="48" Width="48"
-                Background="#5500BFFF" Padding="0" 
+    <StackPanel Orientation="Vertical" Padding="0" Background="AliceBlue">
+      <StackPanel Orientation="Horizontal" Background="#dbf4fd" Height="60">
+        <Button Tapped="ButtonConvertTapped" Height="60" Width="60"
+                Background="#5500BFFF" Padding="0" Margin="20,0,0,0"
                 FontFamily="Segoe MDL2 Assets" FontSize="36" Foreground="#666666" Content="&#xEDB5;">
-          <!--<StackPanel Orientation="Horizontal">
-            --><!--<Border Background="Transparent" CornerRadius="5" BorderBrush="#dbf4fd" BorderThickness="3" VerticalAlignment="Stretch">--><!--
-              <Image Source="../Assets/ButtonIcons/Wiedergabe eingekreist-48_#666666.png" Stretch="Fill"></Image>
-            --><!--</Border>--><!--
-          </StackPanel>-->
         </Button>
-      </StackPanel>
-      <StackPanel Orientation="Horizontal" Height="48">
-        <TextBox x:Name="TextBoxSource" Width="600" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Center"
+        <TextBox x:Name="TextBoxSource" Width="600" BorderThickness="1" Margin="20,0,0,0" VerticalAlignment="Center"
                  PlaceholderText="Enter GUID"></TextBox>
       </StackPanel>
-      <StackPanel Orientation="Horizontal" Height="48">
-        <TextBox x:Name="TextBoxSqLiteHexString" Width="600" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="1"></TextBox>
+      <StackPanel Orientation="Horizontal" Height="48" Margin="0,20,0,0">
+        <TextBox x:Name="TextBoxSqLiteHexString" Width="600"  Margin="20,0,0,0" VerticalAlignment="Center" BorderThickness="1"></TextBox>
         <CheckBox x:Name="CheckBoxCopySqlHexStrAuto" Margin="20,0,0,0" Content="SQLite Hex String automatisch kopieren"
                 IsChecked="True" IsThreeState="False"></CheckBox>
       </StackPanel>
       <StackPanel Orientation="Horizontal" Height="48">
-        <TextBox x:Name="TextBoxHexString" Width="600" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="1"></TextBox>
+        <TextBox x:Name="TextBoxHexString" Width="600" Margin="20,0,0,0" VerticalAlignment="Center" BorderThickness="1"></TextBox>
         <CheckBox x:Name="CheckBoxCopyHexStrAuto" Margin="20,0,0,0" Content="Hex String automatisch kopieren"
                    IsThreeState="False"></CheckBox>
       </StackPanel>
